@@ -3,6 +3,14 @@ import React from "react";
 function QuestionItem({ question }) {
   const { id, prompt, answers, correctIndex } = question;
 
+  function handleDel(id){
+    deleteQuestion(id)
+  }
+
+  function handleChange(newCorrectIndex){
+    updatedQuestion(question, newCorrectIndex);
+  }
+
   const options = answers.map((answer, index) => (
     <option key={index} value={index}>
       {answer}
